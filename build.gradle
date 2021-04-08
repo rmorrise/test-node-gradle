@@ -1,0 +1,11 @@
+plugins {
+  id 'java'
+  id 'com.github.node-gradle.node' version '3.0.1'
+}
+
+node {
+  version = '14.16.0'
+  download = false
+}
+npmSetup.args = ['--loglevel', 'verbose']
+npmInstall.args = ['--loglevel', 'verbose']
