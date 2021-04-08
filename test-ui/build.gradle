@@ -9,3 +9,11 @@ node {
 }
 npmSetup.args = ['--loglevel', 'verbose']
 npmInstall.args = ['--loglevel', 'verbose']
+
+jar.dependsOn 'npm_run_build-prod'
+test.dependsOn 'npm_run_test-headless'
+jar {
+  from 'dist/test-ui' into 'static'
+}
+sourceCompatibility = '8'
+targetCompatibility = '8'
